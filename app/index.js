@@ -2,6 +2,7 @@
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
+var ncp = require('ncp').ncp;
 
 
 var DurandalGenerator = module.exports = function DurandalGenerator(args, options, config) {
@@ -34,7 +35,7 @@ DurandalGenerator.prototype.askFor = function askFor() {
   console.log(welcome);
 
   //Disabled until I figure this out.
-  /*var prompts = [{
+  var prompts = [{
     name: 'bootstrapOption',
     message: 'Would you like to add bootstrap?',
     default: 'Y/n',
@@ -47,20 +48,36 @@ DurandalGenerator.prototype.askFor = function askFor() {
     }
 
     this.bootstrapOption = (/y/i).test(props.bootstrapOption);
+    console.log('You selected ' + this.bootstrapOption + ' for the bootstrap option.');
 
     cb();
-  }.bind(this));*/
+  }.bind(this));
 };
 
 DurandalGenerator.prototype.app = function app() {
-  this.mkdir('app');
-  this.mkdir('app/templates');
+  this.mkdir('dist');
+
+  ncp('app/', 'app', function (err) {
+    if (err) {
+      return console.error(err);
+    }
+    console.log('Durandal successfully scaffolded!');
+  });
 
   this.copy('_package.json', 'package.json');
-  this.copy('_component.json', 'component.json');
+  this.copy('_bower.json', 'bower.json');
 };
 
 DurandalGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('editorconfig', '.editorconfig');
   this.copy('jshintrc', '.jshintrc');
+  this.copy('Gruntfile.js', 'Gruntfile.js');
+  this.copy('README.md', 'README.md');
+
+  //Check to see if the bootstrap option was chosen
+  if (this.bootstrapOption) {
+    //Do something
+    console.log('You chose the bootstrap option – great!');
+  }
+
 };

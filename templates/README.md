@@ -1,5 +1,0 @@
-Durandal Boilerplate
-====================
-
-
-
