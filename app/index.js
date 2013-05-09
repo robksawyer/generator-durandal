@@ -33,9 +33,10 @@ DurandalGenerator.prototype.askFor = function askFor() {
 
   console.log(welcome);
 
-  var prompts = [{
-    name: 'someOption',
-    message: 'Would you like to enable this option?',
+  //Disabled until I figure this out.
+  /*var prompts = [{
+    name: 'bootstrapOption',
+    message: 'Would you like to add bootstrap?',
     default: 'Y/n',
     warning: 'Yes: Enabling this will be totally awesome!'
   }];
@@ -45,10 +46,10 @@ DurandalGenerator.prototype.askFor = function askFor() {
       return this.emit('error', err);
     }
 
-    this.someOption = (/y/i).test(props.someOption);
+    this.bootstrapOption = (/y/i).test(props.bootstrapOption);
 
     cb();
-  }.bind(this));
+  }.bind(this));*/
 };
 
 DurandalGenerator.prototype.app = function app() {

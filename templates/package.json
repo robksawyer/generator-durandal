@@ -1,6 +1,6 @@
 {
-  "name": "durandal-webapp",
-  "version": "0.0.0",
+  "name": "generator-durandal",
+  "version": "0.1.0",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
