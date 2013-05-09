@@ -29,7 +29,7 @@
 		<!--Controls app styling-->
 		<link rel="stylesheet" href="views/styles/app.css">
 
-		<!-- build:js vendor/modernizr.js -->
+		<!-- build:js scripts/vendor/modernizr.js -->
 		<script src="scripts/vendor/modernizr.js"></script>
 		<!-- endbuild -->
 
@@ -66,14 +66,16 @@
 			s.parentNode.insertBefore(g,s)}(document,'script'));
 		</script>
 
+		<!-- build:js scripts/vendor/vendor.js -->
 		<script src="scripts/vendor/jquery-1.9.1.min.js"></script>
 		<script src="scripts/vendor/knockout-2.2.1.js"></script>
 
 		<!--Durandal's core does not require SammyJS. The router plugin uses it.-->
 		<script src="scripts/vendor/sammy-0.7.4.min.js"></script>
+		<!-- endbuild -->
 
 		<!-- build:js main.js -->
-		<script src="durandal/amd/require.js" data-main="main.js"></script>
+		<!-- <script src="durandal/amd/require.js" data-main="main"></script>-->
 		<!-- endbuild -->
 </body>
 </html>
