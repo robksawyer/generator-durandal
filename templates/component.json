@@ -1,6 +1,6 @@
 {
-  "name": "yo-webapp",
-  "version": "0.0.0",
+  "name": "yo-durandal",
+  "version": "0.1.0",
   "dependencies": {
     "requirejs": "~2.1.4",
     "modernizr": "~2.6.2",
