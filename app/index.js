@@ -53,13 +53,13 @@ DurandalGenerator.prototype.askFor = function askFor() {
   var prompts = [{
     name: 'compassBootstrap',
     message: 'Would you like to include Twitter Bootstrap for Sass?',
-    default: true,
+    default: 1,
     warning: 'Yes: All Twitter Bootstrap files will be placed into the styles directory.'
   },
   {
     name: 'includeFontAwesome',
     message: 'Would you like to include Font Awesome (for cool icons)?',
-    default: true,
+    default: 1,
     warning: 'Yes: Font Awesome will be placed into the view styles directory.'
   }];
   /*{
@@ -88,6 +88,11 @@ DurandalGenerator.prototype.gruntfile = function gruntfile() {
   this.template('Gruntfile.js');
 };
 
+DurandalGenerator.prototype.bower = function bower() {
+  this.copy('_bower.json', 'bower.json');
+  this.copy('bowerrc', '.bowerrc');
+};
+
 DurandalGenerator.prototype.packageJSON = function packageJSON() {
   this.template('_package.json', 'package.json');
 };
@@ -95,11 +100,6 @@ DurandalGenerator.prototype.packageJSON = function packageJSON() {
 DurandalGenerator.prototype.git = function git() {
   this.copy('gitignore', '.gitignore');
   this.copy('gitattributes', '.gitattributes');
-};
-
-DurandalGenerator.prototype.bower = function bower() {
-  this.copy('_bower.json', 'bower.json');
-  this.copy('bowerrc', '.bowerrc');
 };
 
 DurandalGenerator.prototype.jshint = function jshint() {
@@ -197,6 +197,7 @@ DurandalGenerator.prototype.mainStylesheets = function mainStylesheets() {
 
 DurandalGenerator.prototype.app = function app() {
   this.mkdir('app');
+  this.mkdir('app/bower_components');
   this.mkdir('dist');
   //this.mkdir('app/viewmodels');
   //this.mkdir('app/durandal');
