@@ -1,6 +1,5 @@
-﻿define(['./system', './viewEngine', './composition', './widget', './modalDialog', './events'], 
-    function(system, viewEngine, composition, widget, modalDialog, Events) {
-
+﻿define(['./system', './viewEngine', './composition', './widget', './modalDialog', './events'],
+    function (system, viewEngine, composition, widget, modalDialog, Events) {
     var app = {
         title: 'Application',
         showModal: function(obj, activationData, context) {
