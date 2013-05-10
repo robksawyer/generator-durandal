@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 // Generated on <%= (new Date).toISOString().split('T')[0] %> using <%= pkg.name %> <%= pkg.version %>
-=======
-// Generated on 2013-05-08 using generator-webapp 0.1.7
->>>>>>> 69668afa1f9904903171eeafd4f0d6e236b0ce18
 'use strict';
 var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
 var mountFolder = function (connect, dir) {
@@ -30,11 +26,7 @@ module.exports = function (grunt) {
 		yeoman: yeomanConfig,
 		watch: {
 			coffee: {
-<<<<<<< HEAD
 				files: ['<%%= yeoman.app %>/scripts/{,*/}*.coffee'],
-=======
-				files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
->>>>>>> 69668afa1f9904903171eeafd4f0d6e236b0ce18
 				tasks: ['coffee:dist']
 			},
 			coffeeTest: {
@@ -42,26 +34,15 @@ module.exports = function (grunt) {
 				tasks: ['coffee:test']
 			},
 			compass: {
-<<<<<<< HEAD
 				files: ['<%%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-=======
-				files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
->>>>>>> 69668afa1f9904903171eeafd4f0d6e236b0ce18
 				tasks: ['compass:server']
 			},
 			livereload: {
 				files: [
-<<<<<<< HEAD
 					'<%%= yeoman.app %>/*.html',
 					'{.tmp,<%%= yeoman.app %>}/styles/{,*/}*.css',
 					'{.tmp,<%%= yeoman.app %>}/scripts/{,*/}*.js',
 					'<%%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-=======
-					'<%= yeoman.app %>/*.html',
-					'{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
-					'{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-					'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
->>>>>>> 69668afa1f9904903171eeafd4f0d6e236b0ce18
 				],
 				tasks: ['livereload']
 			}

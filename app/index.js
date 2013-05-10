@@ -53,13 +53,13 @@ DurandalGenerator.prototype.askFor = function askFor() {
   var prompts = [{
     name: 'compassBootstrap',
     message: 'Would you like to include Twitter Bootstrap for Sass?',
-    default: 1,
+    default: true,
     warning: 'Yes: All Twitter Bootstrap files will be placed into the styles directory.'
   },
   {
     name: 'includeFontAwesome',
     message: 'Would you like to include Font Awesome (for cool icons)?',
-    default: 1,
+    default: true,
     warning: 'Yes: Font Awesome will be placed into the view styles directory.'
   }];
   /*{
@@ -98,8 +98,8 @@ DurandalGenerator.prototype.git = function git() {
 };
 
 DurandalGenerator.prototype.bower = function bower() {
-  this.copy('bowerrc', '.bowerrc');
   this.copy('_bower.json', 'bower.json');
+  this.copy('bowerrc', '.bowerrc');
 };
 
 DurandalGenerator.prototype.jshint = function jshint() {
@@ -116,13 +116,14 @@ DurandalGenerator.prototype.editorConfig = function editorConfig() {
 
 DurandalGenerator.prototype.views = function views() {
   this.copy('favicon.ico', 'app/favicon.ico');
+  this.copy('robots.txt', 'app/robots.txt');
+  this.copy('htaccess', 'app/.htaccess');
+
   this.copy('views/404.html', 'app/views/404.html');
   this.copy('views/detail.html', 'app/views/detail.html');
   this.copy('views/flickr.html', 'app/views/flickr.html');
   this.copy('views/flickr.html', 'app/views/shell.html');
   this.copy('views/flickr.html', 'app/views/welcome.html');
-  this.copy('robots.txt', 'app/robots.txt');
-  this.copy('htaccess', 'app/.htaccess');
 
   //Images
   this.copy('views/images/icon.png', 'app/views/images/icon.png');
@@ -138,9 +139,6 @@ DurandalGenerator.prototype.views = function views() {
 
 DurandalGenerator.prototype.viewmodels = function viewmodels() {
   this.directory('viewmodels', 'app/viewmodels');
-  /*this.copy('viewmodels/flickr.js', 'app/viewmodels/flickr.js');
-  this.copy('viewmodels/shell.js', 'app/viewmodels/shell.js');
-  this.copy('viewmodels/welcome.js', 'app/viewmodels/welcome.js');*/
 };
 
 DurandalGenerator.prototype.durandal = function durandal() {
@@ -200,9 +198,10 @@ DurandalGenerator.prototype.mainStylesheets = function mainStylesheets() {
 DurandalGenerator.prototype.app = function app() {
   this.mkdir('app');
   this.mkdir('dist');
+  //this.mkdir('app/viewmodels');
+  //this.mkdir('app/durandal');
   this.mkdir('app/views');
   this.mkdir('app/views/styles');
-  this.mkdir('app/viewmodels');
   this.mkdir('app/scripts');
   this.mkdir('app/scripts/vendor');
 
