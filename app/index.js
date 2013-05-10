@@ -216,5 +216,6 @@ DurandalGenerator.prototype.app = function app() {
     this.copy('index.html', 'app/index.html');
   }
   
+  this.copy('README.md', 'app/README.md');
   this.copy('main.js', 'app/main.js');
 };
